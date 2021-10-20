@@ -1,10 +1,9 @@
-//ReceiptPrinter.java
+//Printer.java
 
 /* This is a java file 'stub' or piece of a file designed to get you started on 
-* learning to code in java, while at the same time, exploring a little more about
-* collaboration, version control and multiple file scenarios.
+* learning to code in java, specifically with multiple classes and methods that rely on the other.
 *
-*For this assignment, I would like you to fork, modify and commit this file, while
+*For this assignment, I would like you to fork, modify and commit this project, while
 * adding the following elements to your code.
 *
 * The receipt printer file could take arguments or parametrs from another class
