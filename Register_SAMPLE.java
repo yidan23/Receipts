@@ -35,8 +35,7 @@ public class Register {
 // a menu system may call upon the transaction 'window' or screen
 // then you could call up a receipt printer function.
 
-public static void Register() 
-  {
+public static void main (String[] args)  {
     Scanner scan = new Scanner(System.in);
     //main menu system
     
