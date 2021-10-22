@@ -1,4 +1,4 @@
-//TOOK AROUND 10 minutes to type all of this 
+//TOOK AROUND 10 minutes to type all of this (altogether with Printer.java)
 import java.util.Scanner;
 public class Kiosk{
   //main method and user interface
