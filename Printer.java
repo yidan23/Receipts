@@ -31,16 +31,16 @@ public class Printer{
     }
 //this function handles the actual printing of the receipt, using for loops, arrays, and subtraction to get the job done
     public void printReceipt(){
-        System.out.println("THANKS FOR SHOPPING AT DAN'S BEVERAGE STORE");
+        System.out.println("THANKS FOR SHOPPING AT DAN'S");
         System.out.println("HERE IS YOUR RECEIPT:");
-        System.out.println("-----------------------------------------------");
-        System.out.println("Quantity      Name                        Price");
-        System.out.println("-----------------------------------------------");
+        System.out.println("----------------------------------------");
+        System.out.println("Quantity      Name                 Price");
+        System.out.println("----------------------------------------");
         //looping to display each beverage with their own data
         for(int i = 0; i<5; i++){
             if(items[i] != 0){
                 //uses subtraction to print supplementary amount of spaces (I call them dashes)
-                int spaces = 28 - names[i].length();
+                int spaces = 21 - names[i].length();
                 String dashes = "";
                 for(int j = 0; j<spaces; j++){
                     dashes = dashes + " "; 
