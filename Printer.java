@@ -22,9 +22,9 @@ public class Printer{
     int[] items = new int[5];
     int [] prices = {2, 3, 4, 5, 1};
     String[] names = {"Applejuice", "Sprite", "Caprisun", "Gatorade", "Water"};
-
-    double tax = .17;
-    int subTotal = 0;
+	
+    double tax = .07;
+    double subTotal = 0;
 //Printer object simply allows the user purchases to be passed through to this class
     public Printer(int[] purchased){
         items = purchased;
@@ -49,8 +49,8 @@ public class Printer{
                 subTotal += items[i]*prices[i];
             }
         }
-        System.out.println("Subtotal: $" + subTotal);
-        System.out.println("Tax: $" + tax);
-        System.out.println("Total: $" + (subTotal + (subTotal*tax)));
+        System.out.println("Subtotal: $" + String.format("%.2f",subTotal));
+        System.out.println("Tax: $"+String.format("%.2f",subTotal*tax)+" (7%)");
+        System.out.println("Total: $" + String.format("%.2f",(subTotal + (subTotal*tax))));
     }
 }
