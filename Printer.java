@@ -20,7 +20,7 @@ one for the names of the items, one for the prices, and one for the quantity bou
 public class Printer{
     //use of arrays helps me more efficiently write code to print and store values
     int[] items = new int[5];
-    int [] prices = {2, 3, 4, 5, 1};
+    double [] prices = {2.00, 3.00, 4.00, 5.00, 1.00};
     String[] names = {"Applejuice", "Sprite", "Caprisun", "Gatorade", "Water"};
 	
     double tax = .07;
@@ -45,12 +45,32 @@ public class Printer{
                 for(int j = 0; j<spaces; j++){
                     dashes = dashes + " "; 
                 }
-                System.out.println(items[i] + "             " + names[i] + dashes + "$"+ items[i]*prices[i]);
+                System.out.println(items[i] + "             " + names[i] + dashes + "$"+ String.format("%.2f",items[i]*prices[i]));
                 subTotal += items[i]*prices[i];
             }
         }
-        System.out.println("Subtotal: $" + String.format("%.2f",subTotal));
-        System.out.println("Tax: $"+String.format("%.2f",subTotal*tax)+" (7%)");
-        System.out.println("Total: $" + String.format("%.2f",(subTotal + (subTotal*tax))));
+        System.out.println("\n");
+        String showSub = "Subtotal: ";
+        String subVal = String.format("%.2f",subTotal);
+        String subDash = spaces(showSub, subVal);
+        System.out.println(showSub+subDash+"$"+subVal);
+        
+        String showTax = "Tax: ";
+        String taxVal = String.format("%.2f",subTotal*tax);
+        String taxDash = spaces(showTax, taxVal);
+        System.out.println(showTax+taxDash+"$"+taxVal);
+        
+        String showTot = "Total: " ;
+        String totVal = String.format("%.2f",(subTotal + (subTotal*tax)));
+        String totDash = spaces(showTot, totVal);
+        System.out.println(showTot+totDash+"$"+totVal);
     }
+    public String spaces(String text, String val){
+		int spaces = (39-val.length()) - text.length();
+        String dashes = "";
+        for(int j = 0; j<spaces; j++){
+           dashes = dashes + " "; 
+        }
+        return dashes;
+	}
 }
