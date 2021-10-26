@@ -42,19 +42,17 @@ public class Kiosk{
     int counter = 0;
     //looping to ask and store the same info for each beverage
     for (int i = 0; i<5; i++){
+		
         System.out.println(names[i] + " is selling for $" + prices[i]);
         System.out.print("How much do you wanna buy?: ");
         purchased[i] = scan.nextInt();
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-        counter+=purchased[i];
+                System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        if(purchased[i] > 9){
+			System.out.println("Whoops! It looks like you bought more than 9 of this item! Buy again...");
+			i--;
+		}
     }
-    if(counter>9){
-        counter = 0;
-        System.out.println("Whoops! It looks like you bought more than 9 items! Buy again...");
-        Ask();
-    } else{
-            Printer print = new Printer(purchased);
-            print.printReceipt();
-    }
+     Printer print = new Printer(purchased);
+     print.printReceipt();
   }
 }
