@@ -14,6 +14,8 @@ one for the names of the items, one for the prices, and one for the quantity bou
 - I also used subtraction to print a supplementary number of spaces so everything was lined up in the receipt
 - I then used the same use of for loops and those same arrays to make my Ask() function in the Kiosk class shorter
 - I then added finishing touches: printing out subtotal, total (with tax), made interface look nicer, etc.
+- During class, Twyford said to line up the subtotal, tax, and total, and also change the max items function and make it easier to change what items are available
+- So I did all that, creating another for loop to make sure everything lines up to the decimal point. 
 */
 
 import java.util.Scanner;
@@ -35,15 +37,17 @@ public class Kiosk{
     Scanner scan = new Scanner(System.in);
 
     //use of arrays helps me more efficiently write code to print and store values
+    //this also makes it easy to change or add items efficiently
     int[] purchased = new int[5];
-    int [] prices = {2, 3, 4, 5, 1};
+    double [] prices = {2, 3, 4, 5, 1};
     String[] names = {"Applejuice", "Sprite", "Caprisun", "Gatorade", "Water"};
+    double tax = .07;
 
     int counter = 0;
     //looping to ask and store the same info for each beverage
     for (int i = 0; i<5; i++){
 		
-        System.out.println(names[i] + " is selling for $" + prices[i]);
+        System.out.println(names[i] + " is selling for $" + String.format("%.2f",prices[i]));
         System.out.print("How much do you wanna buy?: ");
         purchased[i] = scan.nextInt();
                 System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -52,7 +56,7 @@ public class Kiosk{
 			i--;
 		}
     }
-     Printer print = new Printer(purchased);
+     Printer print = new Printer(purchased, prices, names, tax);
      print.printReceipt();
   }
 }
